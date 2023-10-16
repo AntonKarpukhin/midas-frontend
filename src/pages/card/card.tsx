@@ -4,7 +4,7 @@
 const Card = () => {
 	return (
 		<>
-			Card
+			<h1 style={{color: 'white'}}>Card</h1>
 		</>
 	);
 };

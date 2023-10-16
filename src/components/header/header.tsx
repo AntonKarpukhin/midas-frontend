@@ -24,7 +24,7 @@ const Header = ({changeTabletMenu, tabletMenu}: IHeaderType) => {
 	};
 
 	const changeMenu = (e) => {
-		const text = e.target.parentNode.textContent.slice(0,7);
+		const text = e.target.textContent;
 		if (text === 'ГОРЯЧЕЕ') {
 			setMenuHot(menu => !menu);
 			setMenuCold(false);
@@ -39,9 +39,11 @@ const Header = ({changeTabletMenu, tabletMenu}: IHeaderType) => {
 			[styles.headerActive]: tabletMenu
 		})}>
 			<div className={styles.headerWrapper}>
-				<img className={styles.logo} src="../../../public/Logo.svg" alt="Логотип"/>
+				<NavLink to='/' className={styles.link}>
+					<img className={styles.logo} src="../../../public/Logo.svg" alt="Логотип"/>
+				</NavLink>
 				<ul className={styles.wrapperUl}>
-					<NavLink className={styles.link}>
+					<NavLink to='/' className={styles.link}>
 						<div className={styles.wrapperLink}>
 							АКЦИИ
 							<img src="../../../public/Hot.svg" alt="Акция"/>
@@ -71,9 +73,15 @@ const Header = ({changeTabletMenu, tabletMenu}: IHeaderType) => {
 						</div>
 						{menuCold && <MenuCold/>}
 					</button>
-					<NavLink className={styles.link}>СВЕЖАЯ ВЫПЕЧКА</NavLink>
-					<NavLink className={styles.link}>ДЕСЕРТЫ</NavLink>
-					<NavLink className={styles.link}>НАПИТКИ</NavLink>
+					<NavLink to='/catalog' className={({isActive}) => cn(styles.link, {
+						[styles.active]: isActive
+					})}>СВЕЖАЯ ВЫПЕЧКА</NavLink>
+					<NavLink to='/catalog' className={({isActive}) => cn(styles.link, {
+						[styles.active]: isActive
+					})}>ДЕСЕРТЫ</NavLink>
+					<NavLink to='/catalog' className={({isActive}) => cn(styles.link, {
+						[styles.active]: isActive
+					})}>НАПИТКИ</NavLink>
 				</ul>
 				<button type="button" onClick={changeTabletMenu} className={cn(styles.wrapperLineMenu, {
 					[styles.wrapperLineMenuActive]: tabletMenu
@@ -104,7 +112,7 @@ const Header = ({changeTabletMenu, tabletMenu}: IHeaderType) => {
 					<NavLink>
 						<img src="../../../public/Cabinet.svg" alt="Личный кабинет"/>
 					</NavLink>
-					<NavLink>
+					<NavLink to='/basket'>
 						<img src="../../../public/Basket.svg" alt="Корзина"/>
 					</NavLink>
 				</div>

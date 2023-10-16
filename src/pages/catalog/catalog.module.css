@@ -1,0 +1,17 @@
+.catalog {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.wrapper {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(231px, 1fr));
+	row-gap: 20px;
+	justify-items: center;
+}

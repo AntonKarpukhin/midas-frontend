@@ -19,6 +19,7 @@
 	width: 100%;
 	justify-content: space-between;
 	align-items: center;
+	width: 1600px;
 	padding: 50px;
 }
 
@@ -156,6 +157,26 @@
 
 .lineActiveBottom {
 	transform: rotate(-45deg) translateY(-6px);
+}
+
+.menuActive {
+	color: var(--yellow);
+}
+
+.lineActiveTop {
+	transform: rotate(45deg) translateY(6px);
+}
+
+.lineActiveCentre {
+	display: none;
+}
+
+.lineActiveBottom {
+	transform: rotate(-45deg) translateY(-6px);
+}
+
+.active {
+	color: var(--yellow);
 }
 
 @media screen and (max-width: 1600px) {

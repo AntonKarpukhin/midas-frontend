@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom/client';
 import App from './app.tsx';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Menu, Card, NotFound } from './components/pages';
+import { Menu, Card, NotFound } from './pages';
 import Layout from './components/layout/layout';
 import Header from './components/header/header';
-import ModalOverlay from "./components/modal-overlay/modal-overlay";
+import ModalOverlay from './components/modal-overlay/modal-overlay';
+import Basket from './pages/basket/basket';
+import Catalog from './pages/catalog/catalog';
+import ProductPage from './pages/product-page/product-page';
 
 const router = createBrowserRouter([
 	{
@@ -20,6 +23,19 @@ const router = createBrowserRouter([
 			{
 				path: '/card',
 				element: <Card/>
+			},
+			{
+				path: '/catalog',
+				element: <Catalog/>
+			},
+			{
+				path: '/basket',
+				element: <Basket/>
+			}
+			,
+			{
+				path: '/product/:id',
+				element: <ProductPage/>
 			}
 		]
 	},
