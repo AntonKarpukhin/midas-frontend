@@ -1,0 +1,30 @@
+.button {
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	border: none;
+	cursor: pointer;
+	height: 42px;
+	text-align: center;
+	transition: 0.5s;
+}
+
+.button:hover {
+	opacity: 0.7;
+}
+
+.big {
+	width: 234px;
+	color: var(--black);
+	background-color: var(--yellow);
+}
+
+.small {
+	width: 190px;
+	border: px solid var(--yellow);
+	color: var(--yellow);
+	background-color: var(--blue);
+}

@@ -1,0 +1,38 @@
+.input {
+	margin: 0;
+	padding: 0;
+	background-color: var(--white);
+	color: var(--black);
+	height: 42px;
+	padding: 5px;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	margin-left: 20px;
+}
+
+.small {
+	width: 107px;
+}
+
+.medium {
+	width: 234px;
+}
+
+.big {
+	width: 360px;
+}
+
+.isValid {
+	background-color: red;
+}
+
+.label {
+	padding: 0;
+	margin: 0;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	color: var(--white);
+	cursor: pointer;
+}
