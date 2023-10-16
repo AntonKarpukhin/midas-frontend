@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Menu, Card, NotFound } from './components/pages';
 import Layout from './components/layout/layout';
 import Header from './components/header/header';
+import ModalOverlay from "./components/modal-overlay/modal-overlay";
 
 const router = createBrowserRouter([
 	{

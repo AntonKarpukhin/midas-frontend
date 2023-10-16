@@ -4,10 +4,21 @@
 	padding: 0;
 	background-color: var(--blue);
 	min-height: 110px;
+	width: 1600px;
+}
+
+.headerActive {
+	background-color: var(--black);
+}
+
+.headerWrapper {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 	display: flex;
+	width: 100%;
 	justify-content: space-between;
 	align-items: center;
-	width: 1600px;
 	padding: 50px;
 }
 
@@ -18,11 +29,18 @@
 }
 
 .link {
+	padding: 0;
+	margin: 0;
 	position: relative;
 	color: var(--white);
 	text-decoration: none;
 	transition: 0.5s;
 	cursor: pointer;
+	border: none;
+	background-color: var(--blue);
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
 }
 
 .linkActive {
@@ -79,7 +97,21 @@
 }
 
 .wrapperLineMenu {
+	margin: 0;
+	padding: 0;
 	display: none;
+	background-color: var(--blue);
+	border: none;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.wrapperLineMenu:hover {
+	opacity: 0.7;
+}
+
+.wrapperLineMenuActive {
+	background-color: var(--black);
 }
 
 .wrapperLine {
@@ -97,13 +129,33 @@
 	background-color: var(--white);
 }
 
+.lineActive {
+	background-color: var(--yellow);
+}
+
 .menu {
 	padding: 0;
 	margin: 0;
-	font-size: 12px;
+	font-size: 16px;
 	font-style: normal;
 	font-weight: 500;
 	color: var(--white);
+}
+
+.menuActive {
+	color: var(--yellow);
+}
+
+.lineActiveTop {
+	transform: rotate(45deg) translateY(6px);
+}
+
+.lineActiveCentre {
+	display: none;
+}
+
+.lineActiveBottom {
+	transform: rotate(-45deg) translateY(-6px);
 }
 
 @media screen and (max-width: 1600px) {
@@ -137,7 +189,7 @@
 	.menu {
 		display: none;
 	}
-	.header {
+	.headerWrapper {
 		padding: 10px;
 	}
 	.wrapperHelpers {
@@ -145,5 +197,15 @@
 	}
 	.logo {
 		width: 120px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.input {
+		display: none;
+	}
+
+	.menu {
+		display: none;
 	}
 }

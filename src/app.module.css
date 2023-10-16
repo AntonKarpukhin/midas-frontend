@@ -8,6 +8,13 @@
 	margin: 0 auto;
 }
 
+.main {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	/*display: none;*/
+}
+
 @media screen and (max-width: 1600px) {
 	.app {
 		width: 100vw;

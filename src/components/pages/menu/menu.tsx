@@ -3,9 +3,23 @@
 
 const Menu = () => {
 	return (
-		<>
-			Menu
-		</>
+		<div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+			<div>Menu</div>
+		</div>
 	);
 };
 

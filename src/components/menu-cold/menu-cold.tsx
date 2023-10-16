@@ -7,7 +7,7 @@ const MenuCold = () => {
 			<ul className={styles.wrapperUl}>
 				<NavLink className={styles.link}>Холодные закуски</NavLink>
 				<NavLink className={styles.link}>Салаты</NavLink>
-				<NavLink className={styles.link}>Ассорти</NavLink>
+				<NavLink className={styles.link}>Соусы</NavLink>
 			</ul>
 		</div>
 	);
