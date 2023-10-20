@@ -19,7 +19,6 @@
 	width: 100%;
 	justify-content: space-between;
 	align-items: center;
-	width: 1600px;
 	padding: 50px;
 }
 
@@ -227,6 +226,9 @@
 	}
 
 	.menu {
+		display: none;
+	}
+	.search {
 		display: none;
 	}
 }
