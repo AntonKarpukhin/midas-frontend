@@ -1,0 +1,149 @@
+.Footer {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	padding: 100px 50px 25px 50px;
+	min-height: 190px;
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
+	margin-top: 100px;
+}
+
+.wrapperContacts {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.tel {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	color: var(--white);
+	text-decoration: none;
+}
+
+.email {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-decoration-line: underline;
+	color: var(--white);
+}
+
+.logo {
+	width: 135px;
+	height: 24px;
+}
+
+.wrapperTel {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	gap: 30px;
+}
+
+.line {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 1px;
+	flex-shrink: 0;
+	opacity: 0.3;
+	background: #FFF;
+}
+
+.wrapperPolicy {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.byNamed {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	color: var(--white);
+}
+
+.wrapperTerms {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 45px;
+}
+
+.terms, .policy {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-decoration-line: underline;
+	color: var(--white);
+}
+
+
+@media screen and (max-width: 920px) {
+	.wrapperPolicy {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 25px;
+	}
+	.Footer {
+		padding: 25px;
+	}
+}
+
+@media screen and (max-width: 620px) {
+	.wrapperContacts {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+	}
+	.Footer {
+		gap: 20px;
+	}
+	.wrapperTerms {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+	}
+	.tel {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.tel {
+		font-size: 12px;
+	}
+	.wrapperTel {
+		flex-direction: column;
+		gap: 15px;
+	}
+}

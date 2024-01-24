@@ -1,0 +1,101 @@
+.Slider {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	padding-top: 100px;
+}
+
+.wrapperMenu {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 50px;
+}
+
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 80px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 90px;
+	color: var(--white);
+	margin-right: 550px;
+}
+
+.wrapperArrow {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 40px;
+}
+
+.wrapperItems {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	margin-top: 60px;
+	display: flex;
+	gap: 10px;
+	overflow-x: hidden;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.img {
+	width: 233px;
+}
+
+.button {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.buttonActive svg path {
+	fill: white;
+}
+
+
+@media screen and (max-width: 1070px) {
+	.title {
+		margin-right: 40%;
+	}
+}
+
+@media screen and (max-width: 779px) {
+	.title {
+		margin-right: 10%;
+	}
+}
+
+@media screen and (max-width: 599px) {
+	.title {
+		font-size: 40px;
+	}
+	.button svg {
+		width: 39px;
+		height: 39px;
+	}
+	.wrapperItems {
+		margin-top: 30px;
+	}
+	.wrapperArrow {
+		gap: 20px;
+	}
+	.Slider {
+		padding-top: 50px;
+	}
+	.link {
+		height: 180px;
+		width: 132px;
+	}
+	.img {
+		height: 180px;
+		width: 132px;
+	}
+}

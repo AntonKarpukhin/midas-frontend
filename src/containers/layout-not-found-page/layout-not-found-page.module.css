@@ -1,0 +1,45 @@
+.LayoutNotFoundPage {
+	box-sizing: border-box;
+	padding: 50px;
+	margin: 0;
+	width: 1600px;
+	min-height: 500px;
+	background: linear-gradient(var(--black), var(--blue), var(--black));
+	margin: 0 auto;
+}
+
+.title {
+	margin: 0;
+	padding: 0;
+	color: var(--white);
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 90px;
+	text-align: center;
+}
+
+.link {
+	margin: 0;
+	padding: 0;
+	display: block;
+	color: var(--white);
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 90px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+@media screen and (max-width: 1599px) {
+	.LayoutNotFoundPage {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.title, .link {
+		line-height: 50px;
+	}
+}

@@ -1,0 +1,141 @@
+.CatalogCard {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	margin: 0 auto;
+	transition: 0.8s opacity;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.CatalogCard:hover .title, .CatalogCard:hover .description {
+	opacity: 0.6;
+}
+
+.img {
+	width: 233px;
+	height: 234px;
+	object-fit: cover;
+}
+
+.title {
+	margin: 0;
+	padding: 0;
+	margin-top: 15px;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	color: var(--white);
+	height: 48px;
+	transition: 0.8s opacity;
+}
+
+.wrapperWeight {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	margin-top: 12px;
+	width: 47px;
+	height: 20px;
+	background: grey;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.weight {
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 500;
+	color: var(--white);
+}
+
+.spanWeight {
+	margin: 0;
+	padding: 0;
+	color: var(--white);
+}
+
+.description {
+	margin: 0;
+	padding: 0;
+	margin-top: 9px;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px;
+	color: var(--gray);
+	height: 90px;
+	transition: 0.8s opacity;
+}
+
+.oldPrice, .spanOldPrice {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	color: var(--gray);
+	text-decoration: line-through;
+}
+
+.price, .spanPrice {
+	margin: 0;
+	padding: 0;
+	font-size: 23px;
+	font-style: normal;
+	font-weight: 800;
+	color: var(--white);
+}
+
+.wrapperBasket {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	margin-top: 12px;
+	display: flex;
+	align-items: center;
+	gap: 33px;
+}
+
+.wrapperBasketIcon {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 42px;
+	height: 42px;
+	background: var(--yellow);
+	box-shadow: 0 10px 31px 0 rgba(15, 15, 17, 0.20);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	transition: 0.8s opacity;
+}
+
+.wrapperBasketIcon:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+
+@media screen and (max-width: 510px) {
+	.CatalogCard {
+		width: 155px;
+	}
+	.img {
+		width: 155px;
+		height: 130px;
+		object-fit: contain;
+	}
+	.description {
+		display: none;
+	}
+	.title {
+		font-size: 14px;
+		height: 30px;
+		margin-top: 0;
+	}
+}

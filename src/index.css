@@ -1,0 +1,32 @@
+:root {
+	--font: 'Montserrat', sans-serif;
+	--black: #000000;
+	--blue: #00003b;
+	--blue-hover: #0b0b51;
+	--yellow: #FBD13E;
+	--yellow-hover: #cdac31;
+	--white: #FFF;
+	--gray: #9EA2AA;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	/*overflow-x: hidden;*/
+	/*background: linear-gradient(var(--black), var(--blue), var(--black));*/
+	background-color: #3D3D3D;
+}
+
+@media screen and (max-width: 1617px) {
+	body {
+		overflow-x: hidden;
+	}
+}
+
+@media screen and (max-width: 1599px) {
+	body {
+		overflow-x: visible;
+	}
+}

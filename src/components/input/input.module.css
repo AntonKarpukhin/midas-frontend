@@ -1,0 +1,56 @@
+.label {
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	color: var(--gray);
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	cursor: pointer;
+}
+
+.input {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	padding: 10px;
+	height: 42px;
+	border: none;
+	font-family: var(--font);
+	outline: none;
+	color: var(--black);
+}
+
+.inputBig {
+	width: 360px;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.inputSmall {
+	width: 107px;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.paragraph {
+	margin: 0;
+	padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+	.inputBig {
+		width: 330px;
+	}
+	.paragraph {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.inputBig {
+		width: 300px;
+	}
+}

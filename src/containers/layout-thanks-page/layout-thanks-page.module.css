@@ -1,0 +1,44 @@
+.LayoutThanksPage {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 1600px;
+}
+
+.title {
+	margin: 0;
+	padding: 0;
+	display: block;
+	color: var(--white);
+	font-size: 50px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 90px;
+	text-align: center;
+	margin-top: 50px;
+	width: 100%;
+}
+
+.button {
+	border: none;
+	background: transparent;
+	color: var(--white);
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 30px;
+	cursor: pointer;
+	transition: 0.7s color;
+	display: block;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.button:hover {
+	color: var(--yellow-hover);
+}
+
+@media screen and (max-width: 1599px) {
+	.LayoutThanksPage {
+		width: 100%;
+	}
+}

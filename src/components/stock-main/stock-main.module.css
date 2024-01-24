@@ -1,0 +1,278 @@
+.StockMain {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 68px;
+	position: relative;
+}
+
+.wrapperDelivery {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 26px;
+}
+
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 500;
+	color: var(--white);
+}
+
+.contacts {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+.tel {
+	margin: 0;
+	padding: 0;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 500;
+	color: var(--white);
+	text-decoration: none;
+	width: 240px;
+}
+
+.email {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	color: var(--white);
+	width: 186px;
+}
+
+.wrapperMenu1 {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+}
+
+.img1 {
+	width: 100%;
+	height: 680px;
+}
+
+.menu1Name {
+	margin: 0;
+	padding: 0;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	color: var(--white);
+}
+
+.menu1Weight {
+	margin: 0;
+	padding: 0;
+	width: 37px;
+	height: 15px;
+	background-color: #9c0404;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	color: var(--white);
+	text-align: center;
+	padding: 1px;
+}
+
+.menu1Description {
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 21px;
+	color: var(--white);
+}
+
+.menu1WrapperPrice {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+
+.menu1Price {
+	margin: 0;
+	padding: 0;
+	font-size: 23px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	color: var(--white);
+}
+
+.subWrapperMenu1 {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 30px 60px;
+	width: 355px;
+	height: 357px;
+	background: url("../../../public/backgroundRed.svg") no-repeat;
+	position: absolute;
+	left: 70px;
+	top: 450px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.wrapperMenu2 {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 264px;
+	left: 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	bottom: -350px;
+	margin-top: 100px;
+}
+
+.menu2Weight {
+	margin: 0;
+	padding: 0;
+	width: 37px;
+	height: 15px;
+	background-color: #555555;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	color: var(--white);
+	text-align: center;
+	padding: 1px;
+}
+
+.menu2Name {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	color: var(--white);
+}
+
+.menu2Price {
+	margin: 0;
+	padding: 0;
+	font-size: 23px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	color: var(--white);
+}
+
+.menu2WrapperPrice {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	gap: 35px;
+}
+
+.smallDot {
+	width: 184px;
+	height: 184px;
+}
+
+
+
+.link {
+	transition: 0.7s opacity;
+	text-decoration: none;
+}
+
+.link:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+@media screen and (max-width: 1570px) {
+	.img1 {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1160px) {
+	.img1 {
+		height: 500px;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	.wrapperMenu2, .smallDot {
+		display: none;
+	}
+	.StockMain {
+		flex-direction: column;
+		padding-bottom: 300px;
+		gap: 35px;
+	}
+
+	.wrapperDelivery {
+		flex-direction: row;
+		justify-content: space-between;
+		padding-right: 10px;
+	}
+
+	.title {
+		width: 318px;
+		font-size: 25px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.title {
+		font-size: 20px;
+	}
+	.tel {
+		font-size: 18px;
+	}
+	.email {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 546px) {
+	.wrapperMenu1 {
+		display: none;
+	}
+	.StockMain {
+		padding-bottom: 10px;
+	}
+	.contacts {
+		display: none;
+	}
+	.wrapperDelivery {
+		display: block;
+	}
+	.title {
+		width: 100%;
+	}
+}
+

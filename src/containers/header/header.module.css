@@ -1,0 +1,26 @@
+.Header {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+	.Header {
+		padding: 50px 20px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.Header {
+		padding: 20px;
+	}
+}
+
+@media screen and (max-width: 430px) {
+	.logo {
+		width: 88px;
+	}
+}

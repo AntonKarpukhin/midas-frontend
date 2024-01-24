@@ -1,0 +1,82 @@
+.LayoutBasket {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0 50px;
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 60px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 90px;
+	color: var(--white);
+}
+
+.span {
+	margin: 0;
+	padding: 0;
+	font-size: 50px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 55px;
+	color: var(--yellow);
+	vertical-align: top;
+}
+
+.wrapperPrice {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	margin-top: 44px;
+	align-self: flex-end;
+}
+
+.wrapperItem {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.wrapperSum {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.total {
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	color: var(--gray);
+}
+
+.fullSum {
+	margin: 0;
+	padding: 0;
+	font-size: 23px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	color: var(--white);
+}
+
+@media screen and (max-width: 1024px) {
+	.LayoutBasket {
+		padding: 0 20px;
+	}
+
+}

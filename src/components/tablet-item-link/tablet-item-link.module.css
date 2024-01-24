@@ -1,0 +1,40 @@
+.TabletItemLink {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	text-decoration: none;
+	transition: 0.5s opacity;
+}
+
+.TabletItemLink:hover {
+	opacity: 0.7;
+}
+
+.img {
+	width: 68px;
+	height: 67px;
+}
+
+.p {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	color: var(--white);
+}
+
+@media screen and (max-width: 680px) {
+	.TabletItemLink {
+		width: 350px;
+	}
+	.img {
+		width: 40px;
+		height: 40px;
+	}
+	.p {
+		font-size: 14px;
+	}
+}

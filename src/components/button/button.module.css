@@ -1,0 +1,37 @@
+.button {
+	margin: 0;
+	padding: 0;
+	font-family: var(--font);
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 700;
+	border: none;
+	text-align: center;
+	cursor: pointer;
+	transition: 0.8s background-color;
+	text-transform: uppercase;
+}
+
+.buttonYellow {
+	width: 234px;
+	height: 42px;
+	background-color: var(--yellow);
+	box-shadow: 0 10px 31px 0;
+	color: var(--black);
+}
+
+.buttonYellow:hover {
+	background-color: var(--yellow-hover);
+}
+
+.buttonBlue {
+	width: 190px;
+	height: 42px;
+	background-color: var(--blue);
+	border: 1px solid var(--yellow);
+	color: var(--yellow);
+}
+
+.buttonBlue:hover {
+	background-color: var(--blue-hover);
+}

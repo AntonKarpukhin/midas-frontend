@@ -1,0 +1,192 @@
+.TabletPopup {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: none;
+	position: absolute;
+	width: 100%;
+	min-height: 100vh;
+	background-color: black;
+	top: 130px;
+	padding: 20px;
+}
+
+.wrapperSales {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 5px;
+	width: 195px;
+	height: 291px;
+	background: #B70000;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-decoration: none;
+	transition: 0.8s opacity;
+	grid-area: img;
+}
+
+.wrapperSales:hover {
+	opacity: 0.8;
+}
+
+.wrapperHot {
+	grid-area: hot;
+}
+
+.wrapperCold {
+	grid-area: cold;
+}
+
+.wrapperOther {
+	grid-area: other;
+}
+
+.button {
+	background-color: var(--black);
+	border: none;
+	color: var(--gray);
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin-left: 100px;
+}
+
+.salesCount {
+	margin: 0;
+	padding: 0;
+	color: var(--black);
+	font-size: 70px;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.wrapperStock {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 3px;
+}
+
+.wrapperStockSmall {
+	display: none;
+}
+
+.stockP {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: var(--white);
+}
+
+.wrapperTablet {
+	box-sizing: border-box;
+	padding: 0;
+	padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.line {
+	display: none;
+}
+
+@media screen and (max-width: 1024px) {
+	.TabletPopup {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 300px 300px 10px;
+		gap: 26px;
+		grid-template-areas:
+		"img hot other"
+  		"img cold other";
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.TabletPopup {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		grid-template-rows: repeat(3, auto);
+		gap: 0;
+		grid-template-areas:
+		"img img"
+  		"hot other"
+		"cold other";
+	}
+	.wrapperSales {
+		width: 733px;
+		height: 89px;
+		flex-direction: row;
+	}
+}
+
+@media screen and (max-width: 770px) {
+	.wrapperSales {
+		width: 99%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.TabletPopup {
+		top: 70px;
+	}
+}
+
+@media screen and (max-width: 680px) {
+	.TabletPopup {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.wrapperSales {
+		display: none;
+	}
+	.wrapperStockSmall {
+		margin: 0;
+		display: flex;
+		width: 350px;
+		text-transform: none;
+		transition: 0.7s opacity;
+		gap: 50px;
+		padding-top: 25px;
+		align-items: center;
+	}
+	.wrapperStockSmall:hover {
+		cursor: pointer;
+		opacity: 0.7;
+	}
+	.phoneImg {
+		width: 30px;
+		height: 30px;
+	}
+	.stockP {
+		font-size: 14px;
+		text-transform: none;
+	}
+	.wrapperTablet {
+		gap: 15px;
+	}
+	.button {
+		margin-left: 75px;
+	}
+	.line {
+		display: block;
+		width: 95%;
+		height: 1px;
+		background: #3D3D3D;
+		margin: 20px 0;
+	}
+	.line2 {
+		display: block;
+		width: 95%;
+		height: 1px;
+		background: #3D3D3D;
+	}
+}

@@ -1,0 +1,14 @@
+.buttonBasket {
+	margin: 0;
+	padding: 0;
+	width: 42px;
+	height: 42px;
+	border: none;
+	background-color: var(--yellow);
+	transition: 0.8s background-color;
+}
+
+.buttonBasket:hover {
+	cursor: pointer;
+	background-color: var(--yellow-hover);
+}

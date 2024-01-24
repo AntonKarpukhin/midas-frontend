@@ -1,0 +1,99 @@
+.TabletMenu {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: none;
+	transition: 0.5s opacity;
+	margin-left: -425px;
+}
+
+.TabletMenu:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.wrapperBurger {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 12px;
+}
+
+.wrapperLine {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.wrapperLineOpen {
+	margin-top: 7px;
+}
+
+.lineBurger {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 37px;
+	height: 2px;
+	background-color: var(--white);
+}
+
+.name {
+	margin: 0;
+	padding: 0;
+	color: var(--white);
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+}
+
+.nameOpen {
+	color: var(--yellow);
+}
+
+.lineBurgerOne {
+	background-color: var(--yellow);
+	transform: rotate(45deg);
+	margin: -3px;
+}
+
+.lineBurgerTwo {
+	display: none;
+}
+
+.lineBurgerThree {
+	background-color: var(--yellow);
+	transform: rotate(-45deg);
+	margin: -3px;
+}
+
+@media screen and (max-width: 1024px) {
+	.TabletMenu {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.TabletMenu {
+		margin-left: -300px;
+	}
+}
+
+@media screen and (max-width: 810px) {
+	.TabletMenu {
+		margin-left: -200px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.TabletMenu {
+		margin-left: 0;
+	}
+	.name {
+		display: none;
+	}
+}

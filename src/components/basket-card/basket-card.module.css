@@ -1,0 +1,240 @@
+.BasketCard {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	display: grid;
+	grid-template-columns: 180px repeat(5, auto);
+	align-items: center;
+	justify-items: center;
+}
+
+.wrapperName {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+.name {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	color: var(--white);
+	width: 250px;
+}
+
+.price, .sumPrice {
+	margin: 0;
+	padding: 0;
+	font-size: 23px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	color: var(--white);
+}
+.price {
+
+}
+
+.wrapperPrice {
+	justify-self: start;
+}
+
+.wrapperSumPrice {
+	justify-self: end;
+	text-align: center;
+}
+
+.sumPrice {
+	width: 150px;
+}
+
+.weight {
+	margin: 0;
+	padding: 1px;
+	width: 42px;
+	height: 20px;
+	background-color: var(--gray);
+	color: var(--white);
+	text-align: center;
+}
+
+.img {
+	width: 180px;
+	height: 140px;
+	object-fit: fill;
+	justify-self: start;
+}
+
+.button {
+	width: 42px;
+	height: 42px;
+	background: transparent;
+	border: 1px solid #B70000;
+	box-shadow: 0 10px 31px 0 rgba(15, 15, 17, 0.20);
+	cursor: pointer;
+	transition: 0.7s opacity;
+}
+
+.button:hover {
+	opacity: 0.7;
+}
+
+.wrapperCounter {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 101px;
+	height: 42px;
+	border: 1px var(--gray) solid;
+	display: flex;
+	align-items: center;
+	justify-self: center;
+}
+
+.buttonCounter {
+	width: 30px;
+	height: 30px;
+	background-color: var(--black);
+	border: none;
+	cursor: pointer;
+}
+
+.buttonCounterLeft {
+	transform: translateX(-33px) translateY(-5px);
+}
+
+.buttonCounterRight {
+	transform: translateX(33px);
+}
+
+.count {
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 500;
+	color: var(--white);
+	width: 40px;
+}
+
+.namePrice, .nameSumPrice {
+	display: none;
+}
+
+
+
+@media screen and (max-width: 1023px) {
+	.name {
+		font-size: 17px;
+		width: 180px;
+	}
+
+	.price, .sumPrice {
+		font-size: 19px;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.img {
+		width: 120px;
+		height: 100px;
+	}
+	.BasketCard {
+		grid-template-columns: 120px repeat(5, auto);
+	}
+}
+
+@media screen and (max-width: 889px) {
+	.wrapperName {
+		width: 140px;
+	}
+	.name {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.img {
+		display: none;
+	}
+	.BasketCard {
+		height: 110px;
+		grid-template-columns: repeat(3, 1fr) 100px;
+		grid-template-areas:
+		'name name name button'
+		'price count count sumPrice';
+	}
+	.wrapperCounter {
+		grid-area: count;
+	}
+	.wrapperPrice {
+		grid-area: price;
+	}
+
+	.wrapperSumPrice {
+		grid-area: sumPrice;
+	}
+	.button {
+		grid-area: button;
+		width: 30px;
+		height: 30px;
+		padding-top: 4px;
+		justify-self: end;
+	}
+	.wrapperName {
+		width: 100%;
+		grid-area: name;
+		flex-direction: row-reverse;
+		justify-self: start;
+		gap: 30px;
+	}
+	.name {
+		width: 100%;
+	}
+	.weight {
+		width: 60px;
+	}
+	.namePrice, .nameSumPrice {
+		display: block;
+		margin: 0;
+		padding: 0;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		text-transform: uppercase;
+		color: var(--gray);
+		padding-bottom: 5px;
+	}
+	.wrapperSumPrice {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: center;
+	}
+	.sumPrice {
+		width: 100%;
+	}
+}
+
+
+@media screen and (max-width: 424px) {
+	.buttonCounterLeft {
+		transform: translateX(-12px) translateY(-5px);
+	}
+
+	.buttonCounterRight {
+		transform: translateX(20px);
+	}
+	.name {
+		font-size: 14px;
+	}
+}
+

@@ -1,0 +1,98 @@
+.DesktopMenu {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	display: flex;
+	gap: 45px;
+	align-items: center;
+}
+
+.link {
+	padding: 0;
+	margin: 0;
+	color: var(--white);
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.button {
+	padding: 0;
+	margin: 0;
+	color: var(--white);
+	font-family: var(--font);
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	border: none;
+	background-color: var(--black);
+	cursor: pointer;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+.wrapperButton {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.wrapperLink {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	position: absolute;
+	width: 180px;
+	background-color: var(--black);
+	top: 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 23px;
+	padding: 20px;
+	z-index: 2;
+}
+
+.arrow {}
+
+.arrowRotate path {
+	fill: var(--yellow);
+}
+
+.arrowRotate {
+	transform: rotate(180deg);
+}
+
+.imgStock {
+	margin-left: -40px;
+}
+
+.linkHover {
+	transition: 0.8s color;
+}
+
+.linkHover:hover {
+	cursor: pointer;
+	color: var(--yellow-hover);
+}
+
+.activeLink {
+	color: var(--yellow);
+}
+
+@media screen and (max-width: 1170px) {
+	.DesktopMenu {
+		gap: 30px;
+	}
+	.imgStock {
+		margin-left: -20px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.DesktopMenu {
+		display: none;
+	}
+}

@@ -1,0 +1,19 @@
+.LayoutMain {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	padding-left: 50px;
+	width: 1600px;
+}
+
+@media screen and (max-width: 1599px) {
+	.LayoutMain {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	.LayoutMain {
+		padding-left: 25px;
+	}
+}
