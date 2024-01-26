@@ -1,0 +1,208 @@
+.HistoryCard {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	display: grid;
+	grid-template-columns: 180px repeat(4, auto);
+	align-items: center;
+	justify-items: center;
+}
+
+.wrapperName {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+.name {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	color: var(--white);
+	width: 250px;
+}
+
+.price, .sumPrice {
+	margin: 0;
+	padding: 0;
+	font-size: 23px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	color: var(--white);
+}
+
+.wrapperPrice {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.wrapperSumPrice {
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.sumPrice {
+	width: 150px;
+}
+
+.weight {
+	margin: 0;
+	padding: 1px;
+	width: 45px;
+	height: 20px;
+	background-color: var(--gray);
+	color: var(--white);
+	text-align: center;
+}
+
+.img {
+	width: 180px;
+	height: 140px;
+	object-fit: fill;
+	justify-self: start;
+}
+
+.button {
+	margin: 0;
+	padding: 0;
+	font-size: 23px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	color: var(--white);
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+}
+
+.count {
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 500;
+	color: var(--white);
+	width: 40px;
+}
+
+.namePrice, .nameSumPrice, .nameCounter {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-transform: uppercase;
+	color: var(--gray);
+}
+
+
+
+@media screen and (max-width: 1023px) {
+	.name {
+		font-size: 17px;
+		width: 180px;
+	}
+
+	.price, .sumPrice {
+		font-size: 19px;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.img {
+		width: 120px;
+		height: 100px;
+	}
+	.HistoryCard {
+		grid-template-columns: 120px repeat(4, auto);
+	}
+}
+
+@media screen and (max-width: 889px) {
+	.wrapperName {
+		width: 140px;
+	}
+	.name {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.img {
+		display: none;
+	}
+	.HistoryCard {
+		height: 110px;
+		grid-template-columns: repeat(3, 1fr) 100px;
+		grid-template-areas:
+		'name name name button'
+		'price price . sumPrice';
+	}
+
+	.wrapperPrice {
+		grid-area: price;
+	}
+
+	.wrapperSumPrice {
+		grid-area: sumPrice;
+	}
+	.button {
+		grid-area: button;
+		padding-top: 4px;
+		width: 100%;
+	}
+	.wrapperName {
+		width: 100%;
+		grid-area: name;
+		flex-direction: row-reverse;
+		justify-self: start;
+		gap: 30px;
+	}
+	.name {
+		width: 100%;
+	}
+	.weight {
+		width: 120px;
+	}
+	.namePrice, .nameSumPrice, .nameCounter {
+		display: block;
+		margin: 0;
+		padding: 0;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		text-transform: uppercase;
+		color: var(--gray);
+		padding-bottom: 5px;
+	}
+	.wrapperSumPrice {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: center;
+	}
+	.sumPrice {
+		width: 100%;
+	}
+}
+
+
+@media screen and (max-width: 424px) {
+	.name {
+		font-size: 14px;
+	}
+}
+

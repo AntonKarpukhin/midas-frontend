@@ -3,11 +3,10 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 import { dataErrorMessage, dataUrl } from "../../utils/data";
 import { RootState } from "../store/store-types";
-import { getStockMenu } from "./stock-reducer";
 
 export interface BasketState {
 	basket: Product[],
-	counter: number;
+	counter: number | undefined;
 	basketErrorMessage: string | undefined;
 }
 
@@ -17,11 +16,11 @@ const initialState: BasketState = {
 	basketErrorMessage: undefined
 }
 
-export const getAllDish = createAsyncThunk<BasketState, void, { state: RootState }>('getAllDish',
+export const getAllDish = createAsyncThunk<Product[], void, { state: RootState }>('getAllDish',
 	async (_, thunkApi) => {
 		const jwt = thunkApi.getState().auth.jwt;
 		try {
-			const { data } = await axios.get<Product[]>(`${dataUrl}/me/basket`, {
+			const { data}  = await axios.get<Product[]>(`${dataUrl}/me/basket`, {
 				headers: {
 					'Authorization': `Bearer ${jwt}`,
 					'Content-Type': 'application/json',
@@ -32,11 +31,12 @@ export const getAllDish = createAsyncThunk<BasketState, void, { state: RootState
 			if (e instanceof AxiosError) {
 				throw new Error(e.response?.data.message);
 			}
+			return thunkApi.rejectWithValue(e);
 		}
 	}
 )
 
-export const addDish = createAsyncThunk<BasketState, void, { state: RootState }>('addDish',
+export const addDish = createAsyncThunk<Product[], { name: string, count: number }, { state: RootState }>('addDish',
 	async (idCount: { name: string, count: number }, thunkApi) => {
 		const jwt = thunkApi.getState().auth.jwt;
 		try {
@@ -53,11 +53,12 @@ export const addDish = createAsyncThunk<BasketState, void, { state: RootState }>
 			if (e instanceof AxiosError) {
 				throw new Error(e.response?.data.message);
 			}
+			return thunkApi.rejectWithValue(e);
 		}
 	}
 )
 
-export const deleteDish = createAsyncThunk<BasketState, void, { state: RootState }>('deleteDish',
+export const deleteDish = createAsyncThunk<Product[], string, { state: RootState }>('deleteDish',
 	async (name: string, thunkApi) => {
 		const jwt = thunkApi.getState().auth.jwt;
 		try {
@@ -74,6 +75,7 @@ export const deleteDish = createAsyncThunk<BasketState, void, { state: RootState
 			if (e instanceof AxiosError) {
 				throw new Error(e.response?.data.message);
 			}
+			return thunkApi.rejectWithValue(e);
 		}
 	}
 )
@@ -83,7 +85,10 @@ export const basketReducer = createSlice({
 	initialState,
 	reducers: {
 		clearBasketMessage: (state) => {
-			state.stockErrorMessage = undefined;
+			state.basketErrorMessage = undefined;
+		},
+		clearBasketProduct: (state) => {
+			state.basket = [];
 		}
 	},
 	extraReducers: (builder) => {
@@ -96,9 +101,9 @@ export const basketReducer = createSlice({
 				state.counter = 0;
 				return;
 			}
-			state.counter = action.payload.reduce((a, b) => (a + b.sumPrice), 0);
+			state.counter = action.payload.reduce((a, b) => (a + (b.sumPrice ?? 0)), 0);
 		});
-		builder.addCase(getAllDish.rejected, (state, action) => {
+		builder.addCase(getAllDish.rejected, (state) => {
 			state.basketErrorMessage = dataErrorMessage;
 		});
 
@@ -111,7 +116,7 @@ export const basketReducer = createSlice({
 				state.counter = 0;
 				return;
 			}
-			state.counter = action.payload.reduce((a, b) => (a + b.sumPrice), 0);
+			state.counter = action.payload.reduce((a, b) => (a + (b.sumPrice ?? 0)), 0);
 		});
 
 		builder.addCase(deleteDish.fulfilled, (state, action) => {
@@ -123,7 +128,7 @@ export const basketReducer = createSlice({
 				state.counter = 0;
 				return;
 			}
-			state.counter = action.payload.reduce((a, b) => (a + b.sumPrice), 0);
+			state.counter = action.payload.reduce((a, b) => (a + (b.sumPrice ?? 0)), 0);
 		});
 	}
 });

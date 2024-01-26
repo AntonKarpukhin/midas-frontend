@@ -1,16 +1,32 @@
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import {  useNavigate } from "react-router-dom";
 import Input from "../../components/input/input";
 import Button from "../../components/button/button";
 import cn from 'classnames';
 import styles from './layout-placing-order-page.module.css';
+import { FormInterface } from "../../interfaces/form.interface.ts";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../services/store/store-types.ts";
+import { getProfile } from "../../services/reducers/user-reducer.ts";
+import { postOrder } from "../../services/reducers/order-reducer.ts";
+import { PostOrderInterface } from "../../interfaces/post-order.interface.ts";
+import { checkMessageError, validateData } from "../../utils/validate.tsx";
 
 const LayoutPlacingOrderPage = () => {
 
-	const [payMethod, setPayMethod] = useState<string>('');
-	const [deliveryMethod, setDeliveryMethod] = useState<string>('');
+	const [payMethod, setPayMethod] = useState<string>('cash');
+	const [deliveryMethod, setDeliveryMethod] = useState<string>('pickup');
+	const { basket, counter } = useSelector((state: RootState) => state.basket);
+	const user = useSelector((state: RootState) => state.profile);
+	const {orderErrorMessage} = useSelector((state: RootState) => state.order)
+	const [error, setError] = useState<string>('');
 
+	const dispatch = useDispatch<AppDispatch>();
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		dispatch(getProfile());
+	}, [])
 
 	useEffect(() => {
 		const path = localStorage.getItem('path');
@@ -19,21 +35,47 @@ const LayoutPlacingOrderPage = () => {
 		}
 	}, [])
 
-	const onSendOrder = () => {
-		localStorage.setItem('path', 'placing');
-		navigate('/thanks');
+
+	const onSendOrder = async (e: FormEvent) => {
+		e.preventDefault();
+		const target = e.target as typeof e.target & FormInterface;
+
+		const { username, phone, email, house, room, street } = target;
+
+		const order: PostOrderInterface = {
+			username: username!.value,
+			phone: phone!.value.trim(),
+			email: email!.value,
+			house: house!.value.trim(),
+			room: room!.value.trim(),
+			street: street!.value.trim(),
+			userId: user.id!,
+			counter: counter || 0,
+			deliveryMethod,
+			dishes: basket
+		}
+
+		const validatedData = validateData(order);
+
+		if (typeof validatedData === 'object') {
+			dispatch(postOrder(order));
+			localStorage.setItem('path', 'placing');
+			navigate('/thanks');
+		} else {
+			setError(checkMessageError(validatedData))
+		}
 	}
 
 	const onChangeDeliveryMethod = (s: string) => {
 		setPayMethod(s);
 	}
 
-
 	return (
+		user.username &&
 		<div className={styles.LayoutPlacingOrderPage}>
 			<h2 className={styles.title}>Оформление заказа</h2>
 
-			<form className={styles.form}>
+			<form className={styles.form} onSubmit={onSendOrder}>
 				<div className={styles.wrapperContact1}>
 					<p className={styles.titleContact1}>01. Контактные данные</p>
 					<div className={styles.line}></div>
@@ -43,18 +85,23 @@ const LayoutPlacingOrderPage = () => {
 							type={'text'}
 							name={'username'}
 							labelName={'Имя'}
+							initialValue={user.username}
+							read={true}
 						/>
 						<Input
 							appearance={'big'}
 							type={'tel'}
 							name={'phone'}
 							labelName={'Телефон'}
+							initialValue={user.phone}
 						/>
 						<Input
 							appearance={'big'}
 							type={'email'}
 							name={'email'}
 							labelName={'Почта'}
+							initialValue={user.email}
+                            read={true}
 						/>
 					</div>
 				</div>
@@ -87,6 +134,7 @@ const LayoutPlacingOrderPage = () => {
 							type={'text'}
 							name={'street'}
 							labelName={'Улица'}
+							initialValue={user.street}
 						/>
 						<div className={styles.subWrapperInputContact2}>
 							<Input
@@ -94,12 +142,14 @@ const LayoutPlacingOrderPage = () => {
 								type={'text'}
 								name={'house'}
 								labelName={'Дом'}
+								initialValue={user.house}
 							/>
 							<Input
 								appearance={'small'}
 								type={'text'}
 								name={'room'}
 								labelName={'Квартира'}
+								initialValue={user.room}
 							/>
 						</div>
 					</div>
@@ -132,6 +182,7 @@ const LayoutPlacingOrderPage = () => {
 					</div>
 				</div>
 				<Button text={'Подтвердить заказ'} appearance={'yellow'}/>
+				{orderErrorMessage || error && <div style={{color: 'red', marginTop: '20px'}}>{orderErrorMessage || error}</div>}
 			</form>
 
 		</div>

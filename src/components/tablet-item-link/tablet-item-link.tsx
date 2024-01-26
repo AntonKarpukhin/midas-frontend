@@ -1,8 +1,6 @@
 import { TabletItemLinkProps } from "./tablet-item-link.props";
 import { Link } from "react-router-dom";
-import cn from "classnames";
 import styles from "./tablet-item-link.module.css";
-
 
 const TabletItemLink = ({ name, img, link, closeModal}: TabletItemLinkProps) => {
 	return (

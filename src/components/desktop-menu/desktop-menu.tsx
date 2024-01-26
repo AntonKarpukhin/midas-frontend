@@ -23,7 +23,7 @@ const DesktopMenu = ({ onClickMenu }: DesktopMenuProps) => {
 	}, [pathname]);
 
 	const onOpenSubMenu = (e: MouseEvent) => {
-		const { value } = e.target;
+		const { value } = e.target as HTMLInputElement;
 		if (value === undefined || subMenu === value) {
 			setSubMenu(null);
 			return;

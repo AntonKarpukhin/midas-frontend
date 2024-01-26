@@ -6,9 +6,10 @@
 	gap: 40px;
 	align-items: center;
 	justify-content: center;
+	width: 112px;
 }
 
-.img{
+.img {
 	transition: 0.8s opacity;
 	position: relative;
 	text-decoration: none;

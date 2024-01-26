@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styles from './footer.module.css';
 import {useLocation} from 'react-router-dom'
 import { useEffect } from "react";
@@ -28,8 +27,8 @@ const Footer = () => {
 			<div className={styles.wrapperPolicy}>
 				<p className={styles.byNamed}>© 2024, Project «MIDAS», by Anton Karpukhin</p>
 				<div className={styles.wrapperTerms}>
-					<Link className={styles.policy}>Политика конфиденциальности и оферта</Link>
-					<Link className={styles.terms}>Пользовательское соглашение</Link>
+					<p className={styles.policy}>Политика конфиденциальности и оферта</p>
+					<p className={styles.terms}>Пользовательское соглашение</p>
 				</div>
 			</div>
 		</footer>

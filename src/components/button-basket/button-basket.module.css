@@ -4,11 +4,28 @@
 	width: 42px;
 	height: 42px;
 	border: none;
+	cursor: pointer;
 	background-color: var(--yellow);
-	transition: 0.8s background-color;
+	transition: 0.5s background-color;
 }
 
-.buttonBasket:hover {
-	cursor: pointer;
-	background-color: var(--yellow-hover);
+.wrapper {
+	position: relative;
+}
+
+.info {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 120px;
+	position: absolute;
+	background-color: red;
+	color: var(--white);
+	text-align: center;
+	right: 0;
+	bottom: -90px;
+}
+
+.activeBasket {
+	background-color: red;
 }

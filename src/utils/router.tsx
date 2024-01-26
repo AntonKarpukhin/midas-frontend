@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../pages/home-page/home-page";
 import Loading from "../components/loading/loading";
@@ -13,6 +13,8 @@ const Basket = lazy(() => import("../pages/basket-page/basket-page"));
 const NotFoundPage = lazy(() => import("../pages/not-found-page/not-found-page"));
 const PlacingOrderPage = lazy(() => import("../pages/placing-order-page/placing-order-page"));
 const ThanksPage = lazy(() => import("../pages/thanks-page/thanks-page"));
+const HistoryOrdersPage = lazy(() => import("../pages/history-orders-page/history-orders-page.tsx"));
+const OrderHistoryPage = lazy(() => import("../pages/order-history-page/order-history-page.tsx"));
 
 const router = createBrowserRouter([
 	{
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
 			{
 				path: '/placing',
 				element: <Suspense fallback={<Loading/>}><PlacingOrderPage/></Suspense>
+			},
+			{
+				path: '/orders',
+				element: <Suspense fallback={<Loading/>}><HistoryOrdersPage/></Suspense>
+			},
+			{
+				path: '/orders/:id',
+				element: <Suspense fallback={<Loading/>}><OrderHistoryPage/> </Suspense>,
 			},
 			{
 				path: '/thanks',

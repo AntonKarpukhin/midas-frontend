@@ -36,34 +36,35 @@ const LayoutLogin = () => {
 			username: name,
 			password: password
 		}));
-		setTimeout(() => {
-			navigate('/profile')
-		}, 500)
 	}
 
 	return (
-		<div className={styles.LayoutLogin}>
-			<h2 className={styles.title}>Вход</h2>
-			<form className={styles.form} onSubmit={submit}>
+		<div className={ styles.LayoutLogin }>
+			<h2 className={ styles.title }>Вход</h2>
+			<div className={styles.wrapperInfo}>
+				<p className={ styles.info }> Имя - <span className={styles.span}>test1</span> или <span className={styles.span}>test2</span>.</p>
+				<p className={ styles.info }> Пароль - <span className={styles.span}>test1</span> или <span className={styles.span}>test2</span>.</p>
+			</div>
+			<form className={ styles.form } onSubmit={ submit }>
 				<Input
-					appearance={'big'}
-					type={'text'}
-					name={'username'}
-					labelName={'Имя'}
+					appearance={ 'big' }
+					type={ 'text' }
+					name={ 'username' }
+					labelName={ 'Имя' }
 				/>
 				<Input
-					appearance={'big'}
-					type={'password'}
-					name={'password'}
-					labelName={'Пароль'}
+					appearance={ 'big' }
+					type={ 'password' }
+					name={ 'password' }
+					labelName={ 'Пароль' }
 				/>
-				<Button text={'Вход'} appearance={'yellow'} type={'submit'}/>
-				<Link className={styles.buttonSinIn} to={'/registration'}>Зарегистрироваться</Link>
-				<p className={styles.paragraph}>Зарегистрируйтесь, чтобы оформить заказ.</p>
-				{errorMessage ? <p className={styles.error}>{errorMessage}</p> : null}
+				<Button text={ 'Вход' } appearance={ 'yellow' } type={ 'submit' }/>
+				<Link className={ styles.buttonSinIn } to={ '/registration' }>Зарегистрироваться</Link>
+				<p className={ styles.paragraph }>Зарегистрируйтесь, чтобы оформить заказ.</p>
+				{ errorMessage ? <p className={ styles.error }>{ errorMessage }</p> : null }
 			</form>
-			<img className={cn(styles.img, styles.imgLeft)} src="/plateLeft.png" alt="Блюдо"/>
-			<img className={cn(styles.img, styles.imgRight)} src="/plateRight.png" alt="Блюдо"/>
+			<img className={ cn( styles.img, styles.imgLeft ) } src="/plateLeft.png" alt="Блюдо"/>
+			<img className={ cn( styles.img, styles.imgRight ) } src="/plateRight.png" alt="Блюдо"/>
 		</div>
 	)
 }

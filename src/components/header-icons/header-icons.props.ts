@@ -1,5 +1,5 @@
 
 export interface HeaderIconsProps {
-	jwt: string;
+	jwt: string | null;
 	counter: number;
 }

@@ -1,4 +1,3 @@
-
 import styles from './slider.module.css';
 import { useEffect, useRef, useState } from "react";
 import cn from 'classnames';
@@ -19,10 +18,10 @@ const Slider = () => {
 	useEffect(() => {
 		divBlock && showDivWidth();
 		//2187 и 1287 взяты из суммы ширины всех эллементов слайдера и гэпов
-		setSliderWidth(width > 599 ? 2178 - showDivWidth() : 1287 - showDivWidth());
+		setSliderWidth(width > 599 ? 2178 - showDivWidth()! : 1287 - showDivWidth()!);
 	}, [width])
 
-	const onChangeSlider = (num) => {
+	const onChangeSlider = (num: number) => {
 		if (count === 0 && num > 0) return
 		if (count < -(sliderWidth) && num < 0) return
 		setCount(count => count + num)
@@ -82,14 +81,6 @@ const Slider = () => {
 				<Link to={'/catalog/beverages'}>
 					<img className={styles.img} style={styleTransform} src="/slider/beverages.png" alt="Напитки" />
 				</Link>
-
-
-
-
-
-
-
-
 			</div>
 		</div>
 	)

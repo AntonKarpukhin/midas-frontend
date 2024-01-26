@@ -13,17 +13,18 @@ import ErrorMessageInfo from "../../components/error-message-info/error-message-
 
 const LayoutCard = () => {
 
-	const { card, cardErrorMessage } = useSelector((state: RootState) => state.card)
+	const {jwt} = useSelector((state: RootState) => state.auth);
+	const { card, cardErrorMessage } = useSelector((state: RootState) => state.card);
 	const { id } = useParams();
 	const dispatch = useDispatch<AppDispatch>();
 
 	const [numState, setNumState] = useState(1);
 
-	const addBasketProduct = (name: string, count: 1) => {
+	const addBasketProduct = (name: string, count: number) => {
 		dispatch(addDish({name, count}));
 	}
 
-	const changeState = (num) => {
+	const changeState = (num: number) => {
 		if (numState === 1 && num === -1) {
 			return;
 		} else {
@@ -33,7 +34,7 @@ const LayoutCard = () => {
 
 	useEffect(() => {
 		dispatch(cardActions.clearCardMessage());
-		dispatch(getCard(+id));
+		if (id) dispatch(getCard(+id));
 	}, [id])
 
 	return (
@@ -62,7 +63,7 @@ const LayoutCard = () => {
                                     </button>
                                 </div>
                                 <p className={styles.price}>{`${card.price} ₽`}</p>
-                                <ButtonBasket className={styles.basket} addBasketProduct={addBasketProduct} name={card.name} count={numState}/>
+                                <ButtonBasket className={styles.basket} addBasketProduct={addBasketProduct} name={card.name} count={numState} jwt={jwt}/>
                             </div>
                         </div>
                     </div>

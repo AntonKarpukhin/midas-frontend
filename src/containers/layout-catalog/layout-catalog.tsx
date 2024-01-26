@@ -5,8 +5,9 @@ import { addDish } from "../../services/reducers/basket-reducer";
 import { AppDispatch } from "../../services/store/store-types";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { Product } from "../../interfaces/product.interface.ts";
 
-const LayoutCatalog = ({catalog, title}) => {
+const LayoutCatalog = ({catalog, title}: {catalog: Product[], title: string}) => {
 
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
@@ -22,12 +23,14 @@ const LayoutCatalog = ({catalog, title}) => {
 		}
 	}
 
-	const addBasketProduct = (name: string, count: 1, e: MouseEvent) => {
+	const addBasketProduct = (name: string, count: number, e: MouseEvent) => {
+		count = 1;
 		const target = e.target as typeof e.target & HTMLLinkElement;
 		const nodeName = target.nodeName;
 
 		if (nodeName === 'BUTTON' || nodeName === 'path' || nodeName === 'svg') {
 			dispatch(addDish({name, count}));
+
 		} else {
 			return;
 		}

@@ -18,13 +18,14 @@ const Header = () => {
 	const { basket } = useSelector((state: RootState) => state.basket);
 
 	useEffect(() => {
-		dispatch(getAllDish());
+		if (jwt) {
+			dispatch(getAllDish());
+		}
 	},[])
 
 	const getCatalogMenu = async (text: string) => {
 		dispatch(getCatalog(text));
 	}
-
 
 	return (
 		<>

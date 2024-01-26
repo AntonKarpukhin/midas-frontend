@@ -18,7 +18,8 @@ const LayoutMain = () => {
 
 	const dispatch = useDispatch<AppDispatch>();
 
-	const addBasketProduct = (name: string, count: 1) => {
+	const addBasketProduct = (name: string, count: number) => {
+		count = 1;
 		dispatch(addDish({name, count}));
 	}
 

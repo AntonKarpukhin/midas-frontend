@@ -11,6 +11,7 @@ export interface UserState {
 	street?: string | undefined,
 	house?: string | undefined,
 	room?: string | undefined,
+	id: number | undefined;
 }
 
 const initialState: UserState = {
@@ -21,6 +22,7 @@ const initialState: UserState = {
 	street: undefined,
 	house: undefined,
 	room: undefined,
+	id: undefined,
 }
 
 export const getProfile = createAsyncThunk<UserState, void, { state: RootState }>('me',
@@ -68,6 +70,7 @@ export const profileReducer = createSlice({
 	name: 'profile',
 	initialState,
 	reducers: {
+
 	},
 	extraReducers: (builder) => {
 		builder.addCase(getProfile.fulfilled, (state, action) => {
@@ -78,6 +81,7 @@ export const profileReducer = createSlice({
 			state.street = action.payload.street;
 			state.house = action.payload.house;
 			state.room = action.payload.room;
+			state.id = action.payload.id
 		});
 	}
 });

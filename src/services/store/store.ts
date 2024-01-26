@@ -8,7 +8,8 @@ import cardReducer from "../reducers/card-reducer";
 import stockReducer from "../reducers/stock-reducer";
 import popularReducer from "../reducers/popular-reducer";
 import basketReducer from "../reducers/basket-reducer";
-
+import orderReducer from "../reducers/order-reducer.ts";
+import historyOrderReducer from "../reducers/history-orders-reducer.ts";
 
 export const store = configureStore({
 	reducer: {
@@ -18,7 +19,9 @@ export const store = configureStore({
 		card: cardReducer,
 		stock: stockReducer,
 		popular: popularReducer,
-		basket: basketReducer
+		basket: basketReducer,
+		order: orderReducer,
+		history: historyOrderReducer
 	}
 });
 

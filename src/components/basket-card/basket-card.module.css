@@ -38,9 +38,6 @@
 	line-height: normal;
 	color: var(--white);
 }
-.price {
-
-}
 
 .wrapperPrice {
 	justify-self: start;
@@ -58,7 +55,7 @@
 .weight {
 	margin: 0;
 	padding: 1px;
-	width: 42px;
+	width: 45px;
 	height: 20px;
 	background-color: var(--gray);
 	color: var(--white);
@@ -125,7 +122,14 @@
 }
 
 .namePrice, .nameSumPrice {
-	display: none;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-transform: uppercase;
+	color: var(--gray);
 }
 
 
@@ -199,7 +203,7 @@
 		width: 100%;
 	}
 	.weight {
-		width: 60px;
+		width: 70px;
 	}
 	.namePrice, .nameSumPrice {
 		display: block;

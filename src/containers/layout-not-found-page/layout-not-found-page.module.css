@@ -3,9 +3,9 @@
 	padding: 50px;
 	margin: 0;
 	width: 1600px;
-	min-height: 500px;
 	background: linear-gradient(var(--black), var(--blue), var(--black));
 	margin: 0 auto;
+	min-height: 650px;
 }
 
 .title {

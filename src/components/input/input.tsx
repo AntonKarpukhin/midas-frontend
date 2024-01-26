@@ -1,11 +1,10 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef,  useRef, useState } from "react";
 import { InputProps } from "./input.props";
 import cn from 'classnames';
 import styles from './input.module.css';
 import useResize from "../../hooks/use-resize";
 
-
-const Input = forwardRef<HTMLInputElement, InputProps>(function Input({ isValid, type, name, appearance, className, labelName, initialValue = '' }, ref) {
+const Input = forwardRef<HTMLInputElement, InputProps>(function Input({ read = false,  type, name, appearance, className, labelName, initialValue = '' }, ref) {
 
 	const [value, setValue] = useState<string>(initialValue ?? '');
 	const refLabel = useRef<HTMLLabelElement | null>(null);
@@ -26,6 +25,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input({ isValid,
 				name={name}
 				value={value}
 				onChange={event => setValue(event.target.value)}
+				readOnly={read}
 			/>
 		</label>
 	)

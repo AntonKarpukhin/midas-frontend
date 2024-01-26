@@ -3,6 +3,7 @@
 	margin: 0;
 	padding: 0;
 	width: 1600px;
+	min-height: 650px;
 }
 
 .title {
@@ -41,4 +42,11 @@
 	.LayoutThanksPage {
 		width: 100%;
 	}
+}
+
+@media screen and (max-width: 730px) {
+	.LayoutThanksPage {
+		min-height: 0;
+	}
+
 }

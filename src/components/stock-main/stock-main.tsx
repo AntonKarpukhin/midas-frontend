@@ -1,5 +1,3 @@
-
-
 import cn from "classnames";
 import styles from './stock-main.module.css';
 import ButtonBasket from "../button-basket/button-basket";
@@ -7,14 +5,15 @@ import { StockMainProps } from "./stock-main.props";
 import { useNavigate } from "react-router-dom";
 import { MouseEvent } from "react";
 import numberFormat from "../../utils/number-format";
-
-
+import { useSelector } from "react-redux";
+import { RootState } from "../../services/store/store-types.ts";
 
 const StockMain = ({menu,  className, addBasketProduct, ...props}: StockMainProps) => {
 
 	const menu1 = menu[0];
 	const menu2 = menu[1];
 	const navigate = useNavigate();
+	const {jwt} = useSelector((state: RootState) => state.auth)
 
 	const onClickProduct = (e: MouseEvent) => {
 		const target = e.target as typeof e.target & HTMLDivElement;
@@ -47,11 +46,10 @@ const StockMain = ({menu,  className, addBasketProduct, ...props}: StockMainProp
 							<p className={styles.menu2Weight}>{`${menu2.weight} г`}</p>
 							<div  className={styles.menu2WrapperPrice}>
 								<p className={styles.menu2Price}>{`${numberFormat(menu2.price)} ₽`}</p>
-								<ButtonBasket addBasketProduct={addBasketProduct} name={menu2.name} count={1}/>
+								<ButtonBasket addBasketProduct={addBasketProduct} name={menu2.name} count={1} jwt={jwt}/>
 							</div>
                         </div>
 					</div>
-
             </div>
 
 			<div className={styles.wrapperMenu1}>
@@ -63,7 +61,7 @@ const StockMain = ({menu,  className, addBasketProduct, ...props}: StockMainProp
 						<p className={styles.menu1Description}>{menu1.description}</p>
 						<div className={styles.menu1WrapperPrice}>
 							<p className={styles.menu1Price}>{`${numberFormat(menu1.price)} ₽`}</p>
-							<ButtonBasket addBasketProduct={addBasketProduct} name={menu1.name} count={1}/>
+							<ButtonBasket addBasketProduct={addBasketProduct} name={menu1.name} count={1} jwt={jwt}/>
 						</div>
 					</div>
                 </div>

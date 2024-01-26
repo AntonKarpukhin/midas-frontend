@@ -22,7 +22,7 @@ const LayoutRegistration = () => {
 		e.preventDefault();
 		const target = e.target as typeof e.target & FormInterface;
 		const { username, password, email } = target;
-		if (username?.value.length > 1 && password?.value.length > 3 && email?.value.length > 3) {
+		if ((username && password && email) && (username?.value.length > 1 && password?.value.length > 3 && email?.value.length > 3)) {
 			await sendRegistration(username!.value, password!.value, email!.value);
 			setValidateInput('');
 		} else {

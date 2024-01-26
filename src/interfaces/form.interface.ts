@@ -1,3 +1,5 @@
+import { Product } from "./product.interface.ts";
+
 export interface FormInterface {
 	username?: {
 		value: string
@@ -20,4 +22,8 @@ export interface FormInterface {
 	room?: {
 		value: string
 	};
+	deliveryMethod?: string;
+	userId?: number;
+	counter?: number;
+	dishes?: Product[];
 }

@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 
 const modalRoot = document.getElementById("modals") as HTMLElement;
 
-const TabletPopup = ({setModal}) => {
-
+const TabletPopup = ({setModal}: {setModal: (s: boolean) => void}) => {
 
 	return ReactDOM.createPortal((
 		<div className={styles.TabletPopup}>

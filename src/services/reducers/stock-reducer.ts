@@ -3,7 +3,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 import { dataErrorMessage, dataUrl } from "../../utils/data";
 
-
 export interface StockState {
 	stock: Product[];
 	stockErrorMessage: string | undefined;
@@ -37,7 +36,7 @@ export const stockReducer = createSlice({
 	},
 	extraReducers: (builder) => {
 		builder.addCase(getStockMenu.fulfilled, (state, action) => {
-			state.stock = action.payload
+			if (action.payload) state.stock = action.payload
 		});
 		builder.addCase(getStockMenu.rejected, (state, action) => {
 			console.log(action.error.message);

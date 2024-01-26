@@ -9,7 +9,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import numberFormat from "../../utils/number-format";
 import ErrorMessageInfo from "../../components/error-message-info/error-message-info";
 
-
 const LayoutBasket = () => {
 	const {jwt} = useSelector((state: RootState) => state.auth)
 	const { basket, counter, basketErrorMessage } = useSelector((state: RootState) => state.basket)
@@ -56,11 +55,11 @@ const LayoutBasket = () => {
 					}
 				</div>
 			</div>
-
+			{basket.length === 0 && <p className={styles.noAddProduct}>Товары пока не добавлены</p>}
 			<div className={styles.wrapperPrice}>
 				<div className={styles.wrapperSum}>
 					<p className={styles.total}>Итого к оплате:</p>
-					<p className={styles.fullSum}>{ `${ numberFormat(counter) } ₽` }</p>
+					<p className={styles.fullSum}>{ `${ numberFormat(counter ? counter : 0) } ₽` }</p>
 				</div>
 				<Button text={'Оформить заказ'} appearance={'yellow'} onClick={onPlacingOrder}/>
 			</div>

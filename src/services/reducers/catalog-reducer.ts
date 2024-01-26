@@ -2,8 +2,6 @@ import { Product } from "../../interfaces/product.interface";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 import { dataErrorMessage, dataUrl } from "../../utils/data";
-import { getStockMenu } from "./stock-reducer";
-
 
 export interface CatalogState {
 	catalog: Product[];
@@ -38,7 +36,7 @@ export const catalogReducer = createSlice({
 	},
 	extraReducers: (builder) => {
 		builder.addCase(getCatalog.fulfilled, (state, action) => {
-			state.catalog = action.payload
+			if (action.payload) state.catalog = action.payload
 		});
 		builder.addCase(getCatalog.rejected, (state, action) => {
 			console.log(action)

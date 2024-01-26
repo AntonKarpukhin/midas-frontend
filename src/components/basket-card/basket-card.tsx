@@ -3,7 +3,6 @@ import styles from './basket-card.module.css';
 import cn from "classnames";
 import numberFormat from "../../utils/number-format";
 
-
 const BasketCard = ({card, deleteProduct, changeProduct}: BasketCardProps) => {
 
 	return (
@@ -29,7 +28,7 @@ const BasketCard = ({card, deleteProduct, changeProduct}: BasketCardProps) => {
             </div>
             <div className={styles.wrapperSumPrice}>
                 <p className={styles.nameSumPrice}>Сумма:</p>
-                <p className={styles.sumPrice}>{`${numberFormat(card.sumPrice)} ₽`}</p>
+                <p className={styles.sumPrice}>{`${numberFormat(card.sumPrice || 0)} ₽`}</p>
 			</div>
             <button className={styles.button} type={'button'} onClick={() => deleteProduct(card.name)}>
                 <img src="/cross.svg" alt="Крестик"/>
