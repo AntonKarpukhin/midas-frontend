@@ -15,8 +15,7 @@ body {
 	margin: 0;
 	padding: 0;
 	/*overflow-x: hidden;*/
-	/*background: linear-gradient(var(--black), var(--blue), var(--black));*/
-	background-color: #3D3D3D;
+	background: linear-gradient(var(--black), var(--blue), var(--black));
 }
 
 @media screen and (max-width: 1617px) {
