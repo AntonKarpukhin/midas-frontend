@@ -28,7 +28,7 @@ const LayoutLogin = () => {
 		dispatch(authActions.clearError())
 		const target = e.target as typeof e.target & FormInterface;
 		const { username, password } = target;
-		if (username && password) await sendLogin(username.value, password.value);
+		if (username && password) await sendLogin(username.value.trim(), password.value.trim());
 	}
 
 	const sendLogin = async (name: string, password: string) => {
