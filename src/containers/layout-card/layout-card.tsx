@@ -32,6 +32,12 @@ const LayoutCard = () => {
 		}
 	}
 
+	useEffect( () => {
+		return () => {
+			dispatch(cardActions.clearCard());
+		}
+	}, [] );
+
 	useEffect(() => {
 		dispatch(cardActions.clearCardMessage());
 		if (id) dispatch(getCard(+id));

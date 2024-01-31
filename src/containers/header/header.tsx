@@ -9,6 +9,7 @@ import { AppDispatch, RootState } from "../../services/store/store-types";
 import { getCatalog } from "../../services/reducers/catalog-reducer";
 import { Link } from "react-router-dom";
 import { getAllDish } from "../../services/reducers/basket-reducer";
+import useResize from "../../hooks/use-resize.tsx";
 
 const Header = () => {
 
@@ -16,12 +17,29 @@ const Header = () => {
 	const dispatch = useDispatch<AppDispatch>();
 	const {jwt} = useSelector((state: RootState) => state.auth);
 	const { basket } = useSelector((state: RootState) => state.basket);
+	const {width} = useResize();
 
 	useEffect(() => {
 		if (jwt) {
 			dispatch(getAllDish());
 		}
 	},[])
+
+	useEffect( () => {
+		if (width > 1023 && modal) setModal(false)
+	}, [width] );
+
+	useEffect(() => {
+		const body = document.body;
+		if (body) {
+			if (modal) {
+
+				body.style.overflow = 'hidden';
+			} else {
+				body.style.overflow = 'visible';
+			}
+		}
+	}, [modal]);
 
 	const getCatalogMenu = async (text: string) => {
 		dispatch(getCatalog(text));
@@ -36,7 +54,7 @@ const Header = () => {
 				<DesktopMenu onClickMenu={getCatalogMenu}/>
 				<TabletMenu modal={modal} setModal={setModal} />
 				<HeaderIcons jwt={jwt} counter={basket.length} />
-				{modal && <TabletPopup setModal={setModal} />}
+				{modal && <TabletPopup setModal={setModal}/>}
 			</header>
 		</>
 	)

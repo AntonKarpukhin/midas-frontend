@@ -22,11 +22,16 @@ const LayoutRegistration = () => {
 		e.preventDefault();
 		const target = e.target as typeof e.target & FormInterface;
 		const { username, password, email } = target;
-		if ((username && password && email) && (username?.value.length > 1 && password?.value.length > 3 && email?.value.length > 3)) {
+		if ((username && password && email) && (username?.value.length > 1 && password?.value.length > 5 && email?.value.length > 3)) {
 			await sendRegistration(username!.value, password!.value, email!.value);
 			setValidateInput('');
 		} else {
-			setValidateInput('Необходимо заполнить все поля');
+			if (username!.value.length <= 1) {
+				setValidateInput('Имя пользователя должно быть не менее 2 символов');
+			} else if (password!.value.length <= 5) {
+				setValidateInput('Пароль должен быть не менее 6 символов');
+			}
+
 		}
 	}
 

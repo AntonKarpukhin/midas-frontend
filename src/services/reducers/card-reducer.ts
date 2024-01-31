@@ -41,6 +41,9 @@ export const cardReducer = createSlice({
 	reducers: {
 		clearCardMessage: (state) => {
 			state.cardErrorMessage = undefined;
+		},
+		clearCard: (state) => {
+			state.card = initialState.card;
 		}
 	},
 	extraReducers: (builder) => {

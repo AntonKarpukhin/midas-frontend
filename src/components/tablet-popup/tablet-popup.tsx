@@ -19,7 +19,7 @@ const TabletPopup = ({setModal}: {setModal: (s: boolean) => void}) => {
 				<p className={styles.salesCount}>20%</p>
 			</Link>
 			<Link className={styles.wrapperStockSmall}  to={'/catalog/stock'} onClick={() => setModal(false)}>
-				<img className={styles.phoneImg} src='/public/Hot.svg' alt="Акции"/>
+				<img className={styles.phoneImg} src='/Hot.svg' alt="Акции"/>
 				<p className={styles.stockP}>Акции</p>
 			</Link>
 			<div className={styles.wrapperHot}>

@@ -37,7 +37,7 @@ const DesktopMenu = ({ onClickMenu }: DesktopMenuProps) => {
 	};
 
 	return (
-		<div className={cn(styles['DesktopMenu'])} onClick={onOpenSubMenu}>
+		<div className={cn(styles.DesktopMenu)} onClick={onOpenSubMenu}>
 			<Link to={'/catalog/stock'} className={cn(styles.link, {
 				[styles.activeLink]: activeMenu === 'Акции'
 			})} onClick={() => onChangeActive('Акции')}>
